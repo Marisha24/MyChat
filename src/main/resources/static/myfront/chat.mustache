@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="min.css">
+<!DOCTYPE html>
+<html>
+<body>
+<div class="col-sm-3 col-sm-offset-4 frame">
+    <ul></ul>
+    <div>
+        {{#messages}}
+        <div>
+            <b>{{id}}</b>>
+            <span>{{text}}</span>
+            <strong>{{AuthorName}}</strong>>
+        {{/messages}}
+        <div class="msj-rta macro">
+            <form action="/send" method="post">
+                <div class="text text-r" style="background:whitesmoke !important">
+                    <input class="mytext" type="text" name="text" placeholder="Введите сообщение"/>
+                </div>
+                <input hidden = "true" type="text" name="user_id" value = {{user_id}}>
+
+        <div style="padding:10px;">
+            <button class="glyphicon glyphicon-share-alt"></button>
+        </div>
+<!--                <input type="text" name="text" placeholder="Введите сообщение" />-->
+<!--                <input hidden = "true" type="text" name="user_id" value = {{user_id}}>-->
+<!--                <button type="submit" >Отправить </button>-->
+            </form>
+        </div>
+
+
+    </div>
+        <form action="/logout" method="post">
+            <input type="submit" value="Выйти"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

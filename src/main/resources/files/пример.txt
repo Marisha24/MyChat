@@ -1,0 +1,60 @@
+create table massage
+(
+id bigserial
+constraint massage_pkey
+primary key
+constraint fkph4j7hiimrharapf8bpd4g7lg
+references dialog,
+date date,
+file_url varchar(255),
+text varchar(255),
+owner_id bigint
+constraint fko4g6ohua9fokttcu3io4pcpgl
+references users,
+recipient_id integer
+constraint massage_users_id_fk
+references users
+);
+
+alter table massage
+owner to postgres;
+create table users
+(
+id bigserial
+constraint users_pkey
+primary key,
+ip varchar(255),
+login varchar(255),
+name varchar(255),
+password varchar(255),
+port integer
+);
+
+alter table users
+owner to postgres;
+create table users
+(
+id bigserial
+constraint users_pkey
+primary key,
+ip varchar(255),
+login varchar(255),
+name varchar(255),
+password varchar(255),
+port integer
+);
+
+alter table users
+owner to postgres;
+create table dialog
+(
+id serial
+constraint dialog_pkey
+primary key,
+title varchar(255)
+);
+
+alter table dialog
+owner to postgres;
+
+
